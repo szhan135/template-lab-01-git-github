@@ -1,10 +1,14 @@
 # Git and GitHub
 
-> Author: Brian Crites (@brrcrites), Mike Izbicki (@mikeizbicki)
+#### Author(s): Brian Crites (@brrcrites), Mike Izbicki (@mikeizbicki)
 
 In this class we will be using the git version control system. Version control systems (VCS) are widely used in industry and in open source projects. There are a number of different VCS systems, however git (especially when paired with GitHub) has become the de-facto standard for open source projects. VCS allows for the coordination of code from different developers, allows changes to be tracked and rolled back, and often allow for code reviews and issue tracking. I don't know what programming language you will use at your future job (it may not even exist yet!), but I guarantee you will be using version control.
 
-In this lab, you will learn the basics of how to use git paired with GitHub. GitHub is a git remote repository service that supports online repositories, code reviews, issue tracking, and other useful collaboration features. Note that you will need a GitHub account for this lab, and also note that your GitHub username does not need to match your UCR NetID. I also suggest that you also sign up for the GitHub Student Pack if you haven’t already. Git, GitHub, and Hammer For this lab we will be using the git tools on the hammer server, as well as GitHub. You will need to log into the hammer server using a secure shell (SSH). If you are using a Linux or Mac computer, you can run the following command in the terminal
+In this lab, you will learn the basics of how to use git paired with GitHub. GitHub is a git remote repository service that supports online repositories, code reviews, issue tracking, and other useful collaboration features. Note that you will need a GitHub account for this lab, and also note that your GitHub username does not need to match your UCR NetID. I also suggest that you also sign up for the GitHub Student Pack if you haven’t already. 
+
+## Git, GitHub, and Hammer 
+
+For this lab we will be using the git tools on the hammer server, as well as GitHub. You will need to log into the hammer server using a secure shell (SSH). If you are using a Linux or Mac computer, you can run the following command in the terminal
 
 ```
 ssh <your_username>@hammer.cs.ucr.edu
@@ -12,7 +16,7 @@ ssh <your_username>@hammer.cs.ucr.edu
 
 Replacing `<your_username>` with your CS username. You may be asked to exchange keys with the server, which you should allow, and then you will be prompted for your password. You should note that when typing your password no characters will be displayed, but you are still typing (this is a security measure).
 
-If you are using a Windows computer you will first need to install a program called PuTTY, which can be installed from putty.org. When you open PuTTY there will be a box for a “Host Name”, where you will input `<your_username>@hammer.cs.ucr.edu` (again replacing `<your_username>` with your CS username). From there you can follow the above steps for exchanging keys and entering your password.
+If you are using a Windows computer you will first need to install a program called PuTTY, which can be installed from [putty.org](http://www.putty.org/). When you open PuTTY there will be a box for a “Host Name”, where you will input `<your_username>@hammer.cs.ucr.edu` (again replacing `<your_username>` with your CS username). From there you can follow the above steps for exchanging keys and entering your password.
 
 The server that is used for CS100 is a version of RedHat Linux, which is a paid version of linux that has the benefit of being extremely stable. The problem with this version of linux is that to keep it stable they do not update its tools to new version very often. The version of the git tool that is installed is not compatible with the online service GitHub, so you will need to enable an updated version of the tool for your account with the following command in your terminal
 
@@ -20,7 +24,7 @@ The server that is used for CS100 is a version of RedHat Linux, which is a paid 
 $ source /opt/rh/devtoolset-6/enable
 ```
 
-This will allow you to use a newer version of git that is compatible with github. You will need to run this command every time you login to hammer or alternatively add it to your .bashrc using emacs or vim.
+This will allow you to use a newer version of git that is compatible with github. **You will need to run this command every time you login to hammer** or alternatively add it to your .bashrc using emacs or vim.
 
 > Note: You are not required to develop on the hammer server for this course, and are encouraged to use your own development environment. However, you will need to validate that your code will run correctly on the hammer server as we cannot account for differences in everyone's individual development environments. You are required to host your code on GitHub.
 
@@ -53,7 +57,7 @@ $ cd ..
 $ rm -rf lab-01
 ```
 
-The .. after the change directory command moves us up one directory, and the rm -rf will force (-f) the removal of all files recursively (-r) in that directory.
+The `..` after the change directory command moves us up one directory, and the `rm -rf` will force (`-f`) the removal of all files recursively (`-r`) in that directory.
 
 Now, go to the upper right of this page and click the “Clone or download” dropdown. A box will appear that should say “Clone with HTTPS” (if it says “Clone with SSH”, then click the small blue text to the right that says “Use HTTPS”). Copy the link in the box below, this is the GitHub repository url which you will use to clone that repository. Now, run the following command:
 
@@ -61,9 +65,9 @@ Now, go to the upper right of this page and click the “Clone or download” dr
 $ git clone <github-url>
 ```
 
-Replacing the above `<github-url>` with the url that you copied from the “Clone or download” box. This will create a new folder named lab-01-git-and-github-... with some additional text based on your username/groupname. This new directory is a copy of the GitHub repository, and is already initialized as a git project. Move into this new directory and we can begin modifying it.
+Replacing the above `<github-url>` with the url that you copied from the “Clone or download” box. This will create a new folder named `lab-01-git-and-github-...` with some additional text based on your username/groupname. This new directory is a copy of the GitHub repository, and is already initialized as a git project. Move into this new directory and we can begin modifying it.
 
-> Note: README.md files are special in GitHub repositories. The contents of the README.md file in the repositories root will actually be rendered along with a list of files for anyone who visits the repository. The hash (#) at the beginning of the line is part of GitHub Markdown which specifies that this line should be a title. You can read more about GitHub Markdown here.
+> Note: README.md files are special in GitHub repositories. The contents of the README.md file in the repositories root will actually be rendered along with a list of files for anyone who visits the repository. The hash (#) at the beginning of the line is part of GitHub Markdown which specifies that this line should be a title. [You can read more about GitHub Markdown here](https://guides.github.com/features/mastering-markdown/).
 
 ## Git Status, Add & Commit
 
@@ -100,7 +104,7 @@ We don’t want git to continue to tell us that a.out is untracked, but luckily 
 $ echo “a.out” > .gitignore
 ```
 
-The echo command will output the string “a.out” to terminal, which will then be redirected (>) to the .gitignore file (which will be created if it doesn’t already exist). Now check the status of your repo:
+The echo command will output the string `“a.out”` to terminal, which will then be redirected (`>`) to the .gitignore file (which will be created if it doesn’t already exist). Now check the status of your repo:
 
 ```
 $ git status
@@ -113,7 +117,7 @@ $ git add main.cpp
 $ git add .gitignore
 ```
 
-> Note: Do not add executable or object files to your git repo, only add source files. Tracking executables uses LOTS of disk space and they are unlikely to work on other peoples machines. If we see these files in your git repos, your grade on the assignment will be docked 20%. You should use a .gitignore file so that they don’t appear in your git status or accidentally get added to your repository.
+> Note: Do not add executable or object files to your git repo, only add source files. Tracking executables uses LOTS of disk space and they are unlikely to work on other peoples machines. **If we see these files in your git repos, your grade on the assignment will be docked 20%**. You should use a .gitignore file so that they don’t appear in your git status or accidentally get added to your repository.
 
 Now, when we run git status, there is a section labeled "Changes to be committed" with the main.cpp and .gitignore files underneath it. This means that git now thinks this file is part of the project, and will being to track changes to it.
 
@@ -135,7 +139,7 @@ Running this allows you to edit the last commit that you made, including which f
 
 > Note: the --amend flag will let you add anything to the previous commit, even if it's not a good idea. Because of this you should use it carefully and for situations where you have forgotten a minor change (README, comment, better commit message) or your last commit did not actually function correctly and you need to “patch” it.
 
-We didn’t write an informative commit message, so we should modify it to be something more useful. Run the git commit --amend command and you should see something like the following open in either vim or emacs.
+We didn’t write an informative commit message, so we should modify it to be something more useful. Run the `git commit --amend` command and you should see something like the following open in either vim or emacs.
 
 ```
 My first commit
@@ -182,7 +186,7 @@ Add initial program
 
 After editing the file with the above message, exit your editor and the commit should update.
 
-> Note: The -m flag should only be used when writing very short commit messages, and otherwise you should use the interactive mode to have both a subject and commit body. For some more tips on writing effective git commit messages, read this blog post.
+> Note: The -m flag should only be used when writing very short commit messages, and otherwise you should use the interactive mode to have both a subject and commit body. [For some more tips on writing effective git commit messages, read this blog post](https://chris.beams.io/posts/git-commit/).
 
 Let's make one more commit so we'll have something to play with. Update your main to print the following statement after “hello git”:
 
@@ -229,17 +233,17 @@ A project can have many branches, and every branch can be different than every o
 $ git branch
 ```
 
-This should list just a single branch called master. This branch was created for you automatically when you ran the git init command. 
+This should list just a single branch called master. This branch was created for you automatically when you ran the `git init` command. 
 
-> Note: There are a number of different git workflows that you can utilize, however this tutorial is going to use the “Feature Branch Workflow” workflow. If you contribute to open source you may use the “Forking Workflow” because it uses another layer of abstraction on top of branches (known as forks) which keep the open source repository clean. If you work for a company that needs to have a very stable product, you may use the “Gitflow Workflow” which has dedicated develop, test, and release branches that can be rolled out over time and attempt to keep everything more stable.
+> Note: There are a number of different git workflows that you can utilize, however this tutorial is going to use the ["Feature Branch Workflow"](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) workflow. If you contribute to open source you may use the ["Forking Workflow"](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow) because it uses another layer of abstraction on top of branches (known as forks) which keep the open source repository clean. If you work for a company that needs to have a very stable product, you may use the ["Gitflow Workflow"](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) which has dedicated develop, test, and release branches that can be rolled out over time and attempt to keep everything more stable.
 
-Every time we add a new feature to a project, we create a branch for that feature. In order to help keep track of which branches are for what features, and who is using them, we are going to use a standard naming convention to make things easier. Let's create a branch called add-user-input in our project, and prepend our GitHub username so we know its ours:
+Every time we add a new feature to a project, we create a branch for that feature. In order to help keep track of which branches are for what features, and who is using them, we are going to use a standard naming convention to make things easier. Let's create a branch called `add-user-input` in our project, and prepend our GitHub username so we know its ours:
 
 ```
 $ git branch <github-username>/add-user-input
 ```
 
-You should replace <github-username> with your own GitHub username. Verify that our branch was created successfully with the following command:
+You should replace `<github-username>` with your own GitHub username. Verify that our branch was created successfully with the following command:
 
 ```
 $ git branch
@@ -259,7 +263,7 @@ Now run the following command:
 $ git branch
 ```
 
-Verify that the asterisk is next to the <github-username>/add-user-input branch. Since the only thing you did was switch branches, the working tree looks almost the same. The only difference is the asterisk has moved. You can also view the status of the current branch using:
+Verify that the asterisk is next to the `<github-username>/add-user-input` branch. Since the only thing you did was switch branches, the working tree looks almost the same. The only difference is the asterisk has moved. You can also view the status of the current branch using:
 
 ```
 $ git status
@@ -306,16 +310,16 @@ Running this will show you the difference between the current version of main.cp
  }
 ```
 
-Here, the lines with a plus (+) at the beginning represent new lines and the lines with a minus (-) represent lines that were removed. We can now commit our changes to the current working branch the same way we committed them before:
+Here, the lines with a plus (`+`) at the beginning represent new lines and the lines with a minus (`-`) represent lines that were removed. We can now commit our changes to the current working branch the same way we committed them before:
 
 ```
 $ git add main.cpp
 $ git commit -m "Add user input”
 ```
 
-Before this commit, the <github-username>/add-user-input and master branches were pointing to the same commit. When you run this command, the <github-username>/add-user-input branch gets updated to point to this new commit. In git parlance, since the <github-username>/add-user-input branch now has one more commit than the master branch (and the master branch hasn’t been updated) it is now 1 commit ahead of master.
+Before this commit, the `<github-username>/add-user-input` and `master` branches were pointing to the same commit. When you run this command, the `<github-username>/add-user-input` branch gets updated to point to this new commit. In git parlance, since the `<github-username>/add-user-input` branch now has one more commit than the `master` branch (and the `master` branch hasn’t been updated) it is now 1 commit ahead of `master`.
 
-Let's verify that our changes affected only the <github-username>/add-user-input branch and not the master branch. First, checkout the master branch, then cat the main.cpp file, then return to the <github-username>/add-user-input branch.
+Let's verify that our changes affected only the `<github-username>/add-user-input` branch and not the `master` branch. First, checkout the `master` branch, then cat the main.cpp file, then return to the `<github-username>/add-user-input` branch.
 
 ```
 $ git checkout master
@@ -323,7 +327,7 @@ $ cat main.cpp
 $ git checkout <github-username>/add-user-input
 ```
 
-You should be able to see the difference between the files (your text editor may also ask you to load the new file since it has detected changes). Branches allow us to work on and track multiple features at the same time without having to worry about creating errors in our repository (because the master branch will always be in a working state). We can also move forward and back in the changes that we’ve made to any branch, making it very easy to make a mistake and be able to recover from it (one of the major benefits of using git). 
+You should be able to see the difference between the files (your text editor may also ask you to load the new file since it has detected changes). Branches allow us to work on and track multiple features at the same time without having to worry about creating errors in our repository (because the `master` branch will always be in a working state). We can also move forward and back in the changes that we’ve made to any branch, making it very easy to make a mistake and be able to recover from it (one of the major benefits of using git). 
 
 Changing between branches to see the differences in files is difficult an error prone. Luckily, git provides a mechanism for viewing the commits that have been made through the git log. Run the following command and you should see your commit history:
 
@@ -331,13 +335,13 @@ Changing between branches to see the differences in files is difficult an error 
 $ git log
 ```
 
-Each line starts with commit and then a series of numbers and letters known as a hash which are used to (relatively) uniquely identify each commit. At the end of some of these lines you can see additional information like (HEAD -> <github-username>/add-user-input) and (master). These are indicators showing the last commits for various branches (or at least the last ones git knows about).
+Each line starts with commit and then a series of numbers and letters known as a hash which are used to (relatively) uniquely identify each commit. At the end of some of these lines you can see additional information like (`HEAD -> <github-username>/add-user-input`) and (`master`). These are indicators showing the last commits for various branches (or at least the last ones git knows about).
 
 Normally when working on a feature you would want to update the documentation in the README.md to reflect the changes. Proper documentation of your system will be part of your grade for this course. However, since the documentation for the labs is the instructions, you will only need to update your documentation for the projects.
 
-While we were working on our <github-username>/add-user-input branch, someone reported a bug in our master branch. In particular, the main function in our master branch returns 1, but a successful program should return 0. In UNIX, any return value other than 0 indicates that some sort of error occurred.
+While we were working on our `<github-username>/add-user-input branch`, someone reported a bug in our `master` branch. In particular, the main function in our `master` branch returns 1, but a successful program should return 0. In UNIX, any return value other than 0 indicates that some sort of error occurred.
 
-To fix this bug, we first checkout our master branch:
+To fix this bug, we first checkout our `master` branch:
 
 ```
 $ git checkout master
@@ -359,7 +363,7 @@ $ git commit -m "Fix main to return 0 not 1”
 
 ## Git Merge & Conflicts
 
-We want our users to get access to the fixed software, so we have to add our hotfix code into the master branch. This process is called "merging," which in this case it is a simple procedure. First, checkout the master branch:
+We want our users to get access to the fixed software, so we have to add our hotfix code into the `master` branch. This process is called "merging," which in this case it is a simple procedure. First, checkout the `master` branch:
 
 ```
 $ git checkout master
@@ -371,13 +375,13 @@ Then run the command:
 $ git merge <github-username>/main-return-hotfix
 ```
 
-This will try and automatically merge the hotfix code we wrote with the code in our current branch, which right now is master. If we are trying to merge branch B into branch A, there should be no conflicts if branch B is ahead (meaning there are new commits in B from when it was branched off A) and not behind (meaning there are new commits in A from when B was branched off). Branches can be both ahead and behind each other at any given time, meaning new commits have been made to both branches without a merge happening. This is very common, and so if conflicts do arise then git will warn us about them.
+This will try and automatically merge the hotfix code we wrote with the code in our current branch, which right now is `master`. If we are trying to merge branch B into branch A, there should be no conflicts if branch B is ahead (meaning there are new commits in B from when it was branched off A) and not behind (meaning there are new commits in A from when B was branched off). Branches can be both ahead and behind each other at any given time, meaning new commits have been made to both branches without a merge happening. This is very common, and so if conflicts do arise then git will warn us about them.
 
 > Note: While the git merge conflict checking is good, it is not infowlable. Issues can arise that git will merge without warning you, usually when an interface is changed in one file but the calls are not changed in another. This can lead to weird bugs that are hard to diagnose if you think that the git merging system in infowlable.
 
 With real bugs on more complicated software, bug fixes won't be quite this easy. They might require editing several different files and many commits. It might take us weeks just to find out what's even causing the bug! By putting our changes in a separate branch, we make it easy to have someone fixing the bug while someone else is adding new features.
 
-Our <github-username>/add-user-input feature is also ready now. We've tested it (well not really, but you’ll get plenty of testing in the next lab) and are sure it's working correctly. It's time to merge this feature with the master branch. Run the commands:
+Our `<github-username>/add-user-input` feature is also ready now. We've tested it (well not really, but you’ll get plenty of testing in the next lab) and are sure it's working correctly. It's time to merge this feature with the `master` branch. Run the commands:
 
 ```
 $ git checkout master
@@ -394,7 +398,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 This error is called a "merge conflict" and is one of the hardest concepts for new git users to understand. Why did this happen?
 
-In our hotfix branch above, git automatically merged the main.cpp file for us. It could do this because the main.cpp file in the master branch did not change after we created the bugfix branch, in other words the hotpatch branch was ahead but not behind master. Unfortunately, after we merged the hotfix branch into master, this changed the main.cpp file. Now when git tries to merge our changes from the <github-username>/add-user-input branch, it doesn't know which parts to keep from <github-username>/add-user-input, and which parts to keep from the hotfix branch. We have to tell git how to do this manually.
+In our hotfix branch above, git automatically merged the main.cpp file for us. It could do this because the main.cpp file in the `master` branch did not change after we created the bugfix branch, in other words the hotpatch branch was ahead but not behind `master`. Unfortunately, after we merged the hotfix branch into `master`, this changed the main.cpp file. Now when git tries to merge our changes from the `<github-username>/add-user-input` branch, it doesn't know which parts to keep from `<github-username>/add-user-input`, and which parts to keep from the hotfix branch. We have to tell git how to do this manually.
 
 If you inspect the contents of the main.cpp file, you'll see something like:
 
@@ -419,9 +423,9 @@ int main()
 }
 ```
 
-As you can see, the file is divided into several sections. Any line not between the <<<<<<<< and >>>>>>>> lines is common to both versions of main.cpp. The lines between <<<<<<<< HEAD and ======= belong only to the version in the master branch (the current branch). And the lines between ======= and >>>>>>>> <github-username>/add-user-input belong only to the <github-username>/add-user-input branch (the branch you are merging in).
+As you can see, the file is divided into several sections. Any line not between the `<<<<<<<<` and `>>>>>>>>` lines is common to both versions of main.cpp. The lines between `<<<<<<<< HEAD` and `=======` belong only to the version in the current branch (`master`). And the lines between `=======` and `>>>>>>>> <github-username>/add-user-input` belong only to the `<github-username>/add-user-input` branch (the branch you are merging in).
 
-The key to solving a merge conflict is to edit the lines between <<<<<<< and >>>>>>> to include only the correct information between the two branches. In our case, we want the return statement from the master branch, and all of the input/output from the <github-username>/add-user-input branch. So we should modify the main.cpp file to be:
+The key to solving a merge conflict is to edit the lines between `<<<<<<<` and `>>>>>>>` to include only the correct information between the two branches. In our case, we want the return statement from the master branch, and all of the input/output from the `<github-username>/add-user-input` branch. So we should modify the main.cpp file to be:
 
 ```
 #include <iostream>
@@ -438,7 +442,7 @@ int main()
 }
 ```
 
-Most of the changes you’ll need to make will be between the special markers that represent the conflicting code, however you will sometimes have to make changes outside of these special markers. This is usually because you made changes that didn’t conflict somewhere else, but the conflicting code changed some access/mutation pattern and you have to correct the unconflicted code. Whenever you fix a merge conflict yourself, git will assume whatever you did was correct so you should only be doing what's necessary to merge the two branches. This isn’t the time to fix additional bugs, make style changes, or modify an accessor. You should use --amend for that work after you’ve fixed the merge to keep the commits clean.
+Most of the changes you’ll need to make will be between the special markers that represent the conflicting code, however you will sometimes have to make changes outside of these special markers. This is usually because you made changes that didn’t conflict somewhere else, but the conflicting code changed some access/mutation pattern and you have to correct the unconflicted code. Whenever you fix a merge conflict yourself, git will assume whatever you did was correct so you should only be doing what's necessary to merge the two branches. This isn’t the time to fix additional bugs, make style changes, or modify an accessor. You should use `--amend` for that work after you’ve fixed the merge to keep the commits clean.
 
 Once we have resolved this merge conflict, we can finalize our merge. We first tell git that we've solved the conflict by adding the conflicting files, then we perform a standard commit. Since git knows we are trying to merge a commit, it will actually generate a generic merging commit message for us.
 
@@ -451,7 +455,7 @@ As you can see, resolving merge conflicts is a tedious process. Most projects tr
 
 ## Git Tag
 
-Often, you’ll want to tag certain git commits because they are special. The most common reason to tag a commit in git is to tag it as a beta or release version, especially when using semantic versioning schemes. Let's assume that our code is now ready for release as a v1.0.0 and tag it as such.
+Often, you’ll want to tag certain git commits because they are special. The most common reason to tag a commit in git is to tag it as a beta or release version, especially when using [semantic versioning schemes](https://semver.org/). Let's assume that our code is now ready for release as a v1.0.0 and tag it as such.
 
 ```
 $ git tag -a v1.0.0 -m “Initial release”
@@ -469,13 +473,13 @@ Since we cloned the remote repository from GitHub directly, our local repository
 $ git push
 ```
 
-This will push all the commits for the current branch, not all the branches you have changes for. If there haven’t been any other changes to the remote GitHub version of that branch, then this will simply send the commits to the repo. However, if there have been changes to the branch, perhaps because someone else has also been working on that same branch or changes have been merged into master, then you will first need to “pull” the remote changes, merge them with your work, and then push the merged version to GitHub
+This will push all the commits for **the current branch**, not all the branches you have changes for. If there haven’t been any other changes to the remote GitHub version of that branch, then this will simply send the commits to the repo. However, if there have been changes to the branch, perhaps because someone else has also been working on that same branch or changes have been merged into master, then you will first need to “pull” the remote changes, merge them with your work, and then push the merged version to GitHub
 
 ```
 $ git pull
 ```
 
-Like git push, git pull will request the changes for only the current branch, not all the branches. Git will automatically try and merge the remote changes with your current changes. It may be able to automatically merge or you may need to fix merge conflicts. Either way you then need to
+Like git push, git pull will request the changes for **only the current branch**, not all the branches. Git will automatically try and merge the remote changes with your current changes. It may be able to automatically merge or you may need to fix merge conflicts. Either way you then need to
 
 ```
 $ git commit
