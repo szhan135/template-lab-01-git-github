@@ -1,6 +1,6 @@
 # Git and GitHub
 
-#### Author(s): Brian Crites (@brrcrites), Mike Izbicki (@mikeizbicki)
+> Author(s): Brian Crites ([@brrcrites](https://github.com/brrcrites)), Mike Izbicki ([@mikeizbicki](https://github.com/mikeizbicki))
 
 In this class we will be using the git version control system. Version control systems (VCS) are widely used in industry and in open source projects. There are a number of different VCS systems, however git (especially when paired with GitHub) has become the de-facto standard for open source projects. VCS allows for the coordination of code from different developers, allows changes to be tracked and rolled back, and often allow for code reviews and issue tracking. I don't know what programming language you will use at your future job (it may not even exist yet!), but I guarantee you will be using version control.
 
