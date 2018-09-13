@@ -2,9 +2,7 @@
 
 > Author(s): Brian Crites ([@brrcrites](https://github.com/brrcrites)), Mike Izbicki ([@mikeizbicki](https://github.com/mikeizbicki))
 
-In this class we will be using the git version control system. Version control systems (VCS) are widely used in industry and in open source projects. There are a number of different VCS systems, however git (especially when paired with GitHub) has become the de-facto standard for open source projects. VCS allows for the coordination of code from different developers, allows changes to be tracked and rolled back, and often allow for code reviews and issue tracking. I don't know what programming language you will use at your future job (it may not even exist yet!), but I guarantee you will be using version control.
-
-In this lab, you will learn the basics of how to use git paired with GitHub. GitHub is a git remote repository service that supports online repositories, code reviews, issue tracking, and other useful collaboration features. Note that you will need a GitHub account for this lab, and also note that your GitHub username does not need to match your UCR NetID. I also suggest that you also sign up for the GitHub Student Pack if you haven’t already. 
+In this class we will be using the git version control system as well as the GitHub remote repository service. Git is a version control system (VCS) which allows for the revision and coordination of code between different developers and between different features. GitHub allows for these features not only locally but over the internet, and adds features such as code reviews and issue tracking. GitHub has become the de-facto standard for hosting and developing open source projects. Whatever programming language you use in the future, you will almost certainly use a VCS. In this lab you will learn the basics of using git and how to save your local work to GitHub.
 
 ## Git, GitHub, and Hammer 
 
