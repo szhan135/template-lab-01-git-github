@@ -26,6 +26,17 @@ This will allow you to use a newer version of git that is compatible with github
 
 > Note: You are not required to develop on the hammer server for this course, and are encouraged to use your own development environment. However, you will need to validate that your code will run correctly on the hammer server as we cannot account for differences in everyone's individual development environments. You are required to host your code on GitHub.
 
+## Git Config
+
+Git is a local program for performing version control, which is also capable of working with a remote git server for saving code off site. GitHub is a web based git repository, which the local git program is capable of interfacing with. Git and GitHub are therefore two seperate systems and git needs to be configured correctly in order for your code changes to be tracked correctly. You should run the following commands on any new system you are committing from before you start working (these can be run from any directory):
+
+```
+git config --global user.name "<first-name last-name>"
+git config --global user.email <github-registered-email>
+```
+
+GitHub will use the user email that you configure with your git client to track which users are creating what commits. This means that you'll need to use the email address you've registered with GitHub in the above configurations (otherwise you may see commits from an anonymous user)
+
 ## Git Init & Clone
 
 The traditional way to start a new project in git is to create a new directory and change into it. Go ahead and run the following commands on the terminal in hammer:
@@ -463,7 +474,7 @@ The -m in this case works the same as it does when performing a commit, allowing
 
 ## Git Push & Pull
 
-While git is a VCS, GitHub is a remote repository. This is an important distinction for two reasons. The first is that up until now all the work you’ve done has only been saved locally, so if there is a problem with your computer you would have no backup and therefore no way to recover the files. The second is that because all the changes are local, there is no way for people collaborating with you to see your changes or merge them into their own branches.
+While git is a VCS, GitHub is a remote repository which is an important distinction for two reasons. The first is that up until now all the work you’ve done has only been saved locally, so if there is a problem with your computer you would have no backup and therefore no way to recover the files. The second is that because all the changes are local, there is no way for people collaborating with you to see your changes or merge them into their own branches. Go to your GitHub repository for this lab, and you should see that none of the work you've done is listed.
 
 Since we cloned the remote repository from GitHub directly, our local repository is already associated with a remote repository (usually referred to as “remote” or “upstream”). In order to send the changes we’ve made locally to GitHub, we just need to “push” them up to the server (do this now).
 
