@@ -22,7 +22,7 @@ The server that is used for CS100 is a version of RedHat Linux, which is a paid 
 $ source /opt/rh/devtoolset-6/enable
 ```
 
-This will allow you to use a newer version of git that is compatible with github. **You will need to run this command every time you login to hammer** or alternatively add it to your .bashrc using emacs or vim.
+This will allow you to use a newer version of git that is compatible with github. **You will need to run this command every time you login to hammer** or alternatively add it to your .bashrc using emacs or vim. If you are unfamilair with command line editors, you can read these tutorials for [vim](https://blog.interlinked.org/tutorials/vim_tutorial.html) and [emacs](http://www.jesshamrick.com/2012/09/10/absolute-beginners-guide-to-emacs/) to get started. Knowing at least one command line editor is extremely important since lots of new development is being done on cloud servers which do not have visual interfaces.
 
 > Note: You are not required to develop on the hammer server for this course, and are encouraged to use your own development environment. However, you will need to validate that your code will run correctly on the hammer server as we cannot account for differences in everyone's individual development environments. You are required to host your code on GitHub.
 
@@ -68,7 +68,11 @@ $ rm -rf lab-01
 
 The `..` after the change directory command moves us up one directory, and the `rm -rf` will force (`-f`) the removal of all files recursively (`-r`) in that directory.
 
-Now, go to the upper right of this page and click the “Clone or download” dropdown. A box will appear that should say “Clone with HTTPS” (if it says “Clone with SSH”, then click the small blue text to the right that says “Use HTTPS”). Copy the link in the box below, this is the GitHub repository url which you will use to clone that repository. Now, run the following command:
+Now, go to the upper right of this page and click the “Clone or download” dropdown. A box will appear that should say “Clone with HTTPS” (if it says “Clone with SSH”, then click the small blue text to the right that says “Use HTTPS”). The box should look like the following, being careful to make sure it says "Clone with HTTPS".
+
+
+
+Copy the link in the box below, this is the GitHub repository url which you will use to clone that repository. Now, run the following command:
 
 ```
 $ git clone <github-url>
