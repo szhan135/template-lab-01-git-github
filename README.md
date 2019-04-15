@@ -16,7 +16,7 @@ Replacing `<your_username>` with your CS username. You may be asked to exchange 
 
 If you are using a Windows computer you will first need to install a program called PuTTY, which can be installed from [putty.org](http://www.putty.org/). When you open PuTTY there will be a box for a “Host Name”, where you will input `<your_username>@hammer.cs.ucr.edu` (again replacing `<your_username>` with your CS username). From there you can follow the above steps for exchanging keys and entering your password.
 
-The server that is used for CS100 is a version of RedHat Linux, which is a paid version of linux that has the benefit of being extremely stable. The problem with this version of linux is that to keep it stable they do not update its tools to new version very often. The version of the git tool that is installed is not compatible with the online service GitHub, so you will need to enable an updated version of the tool for your account with the following command in your terminal
+The server that is used for CS100 is a version of CentOS Linux, which is a version of linux that has the benefit of being extremely stable. The problem with this version of linux is that to keep it stable they do not update its tools to new version very often. The version of the git tool that is installed is not compatible with the online service GitHub, so you will need to enable an updated version of the tool for your account with the following command in your terminal
 
 ```
 $ source /opt/rh/devtoolset-6/enable
@@ -39,7 +39,7 @@ GitHub will use the user email that you configure with your git client to track 
 
 ## Git Init & Clone
 
-The traditional way to start a new project in git is to create a new directory and change into it. Go ahead and run the following commands on the terminal in hammer:
+The traditional way to start a new project in git is to create a new directory and change into it. In order to create a directory and move into it you will need to have some knowledge of basic command line navigation. If you need some explination or a referesher on these topics please [consult this DigitalOcean introduction](https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management). Go ahead and run the following commands on the terminal in hammer:
 
 ```
 $ mkdir lab-01
