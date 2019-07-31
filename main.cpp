@@ -7,8 +7,6 @@ int main ()
 	std::cout<<"Hellp " << name <<"!"<<std::endl;
 	
 	
-	std::cout<<"hello git"<<std::endl;
-	std::cout<<"git is easy?"<<std::endl;
 	return 0;
 }
 
